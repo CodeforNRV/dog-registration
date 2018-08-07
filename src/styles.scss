@@ -1,0 +1,4 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap';
+/* body padding must be at least 15px to prevent rogue horizontal scroll on page, probably a formly glitch */
+body { padding: 30px; }
