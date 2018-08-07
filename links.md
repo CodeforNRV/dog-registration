@@ -3,9 +3,12 @@ Angular seems quite nice.  Let's build it as an angular app, so it can work also
 let's use formly for angular 2+:
 https://github.com/formly-js/ngx-formly
 
+this looks nice:
+https://ngx-bootstrap-latest.surge.sh/#/
 
 bootstrap themes w forms:
 https://demos.creative-tim.com/argon-design-system/index
+NOT UP TO DATE:
 https://github.com/formly-js/angular-formly-templates-bootstrap
 https://alligator.io/angular/formly/
 
@@ -14,21 +17,16 @@ the next step is to add our images of dogs.  Then we can throw it up on GitHub.
 the next step is to get bootstrap-formly properly configured.  Currently we have bootstrap, but we haven't hooked the css up to formly fully, so certain things like drop-downs are not normalized.
 
 gameplan:
-FIRST try argon.
-THEN try angular-formly-templates-bootstrap
+argon works, although it's annoying that the scss files have to sit in the src directory.  Perhaps that can be fixed.
+
+but the DROPDOWN css still does not.  So let's try:
+angular-formly-templates-bootstrap
 
 
 
 
 
-Wanted:
-input
-paragraph input
-drop down
-drop down with search
-radio button
-validate inputs with useful error messages next to the inputted thing
-checkbox
+
 
 Optional:
 file upload

@@ -1,28 +1,18 @@
-# dog-registration
-Montgomery County requires that all dogs in the county be registered and this will help make that easier!
+Angular seems quite nice.  Let's build it as an angular app, so it can work also nicely on phones/small screens.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+let's use formly for angular 2+:
+https://github.com/formly-js/ngx-formly
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+bootstrap themes w forms:
+https://demos.creative-tim.com/argon-design-system/index
+https://github.com/formly-js/angular-formly-templates-bootstrap
+https://alligator.io/angular/formly/
 
-## Code scaffolding
+the next step is to add our images of dogs.  Then we can throw it up on GitHub.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+the next step is to get bootstrap-formly properly configured.  Currently we have bootstrap, but we haven't hooked the css up to formly fully, so certain things like drop-downs are not normalized.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+gameplan:
+FIRST try argon.
+THEN try angular-formly-templates-bootstrap
