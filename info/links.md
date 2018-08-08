@@ -3,6 +3,9 @@ Angular seems quite nice.  Let's build it as an angular app, so it can work also
 let's use formly for angular 2+:
 https://github.com/formly-js/ngx-formly
 
+dropdown css styling github issue:
+https://github.com/formly-js/ngx-formly/issues/1100
+
 this looks nice:
 https://ngx-bootstrap-latest.surge.sh/#/
 
@@ -18,10 +21,6 @@ the next step is to get bootstrap-formly properly configured.  Currently we have
 
 gameplan:
 argon works, although it's annoying that the scss files have to sit in the src directory.  Perhaps that can be fixed.
-
-but the DROPDOWN css still does not.  So let's try:
-angular-formly-templates-bootstrap
-
 
 
 

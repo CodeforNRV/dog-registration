@@ -58,7 +58,7 @@ export class MyFormComponent {
     },
     {
       className: 'section-label',
-      template: '<hr /><h2>Address</h2>',
+      template: '<hr /><h2>Address</h2><small class="text-muted">Your new dog tag(s) and a receipt will be mailed here.  Must be a valid Montgomery County address.</small>',
     },
     {
       key: 'address.street.1',
