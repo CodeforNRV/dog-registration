@@ -4,13 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 import { AppComponent } from './app.component';
 import { MyFormComponent } from './my-form/my-form.component';
 import { FormlyFieldCustomInput } from './custom-input/custom-input.component';
+import { PaypalComponent } from './paypal/paypal.component';
 
 @NgModule({
   imports: [
+    NgxPayPalModule,
     BrowserModule,
     ReactiveFormsModule,
     FormlyBootstrapModule,
@@ -28,6 +31,7 @@ import { FormlyFieldCustomInput } from './custom-input/custom-input.component';
     AppComponent,
     MyFormComponent,
     FormlyFieldCustomInput,
+    PaypalComponent,
   ],
   bootstrap: [ AppComponent ],
 })

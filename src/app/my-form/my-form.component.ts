@@ -105,6 +105,7 @@ export class MyFormComponent {
               { label: 'Blacksburg', value: '24060', },
               { label: 'Christiansburg', value: '24073', },
             ],
+            customSelect: true, // makes dropdown arrow uniform across browsers
             required: true,
           },
         },

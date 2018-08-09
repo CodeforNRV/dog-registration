@@ -1,4 +1,27 @@
-Angular seems quite nice.  Let's build it as an angular app, so it can work also nicely on phones/small screens.
+let's make it work nicely on phones/small screens.
+
+include a js file into a ts file:
+let checkout = require("./app/paypal/checkout.js");
+in main.ts, or import 'require' and then use in specific file
+
+paypal:
+https://www.paypal.com/activation/businessSetup#payment
+
+paypal developer reference:
+https://developer.paypal.com/docs/classic/express-checkout/integration-guide/ECReference/
+
+look at
+ngx-paypal
+at
+https://github.com/Enngage/ngx-paypal
+with documentation:
+https://enngage.github.io/ngx-paypal/
+sandbox site:
+https://www.sandbox.paypal.com/
+sandbox accounts:
+https://developer.paypal.com/developer/accounts
+create REST app for a sandbox account and get api key:
+https://developer.paypal.com/developer/applications/
 
 let's use formly for angular 2+:
 https://github.com/formly-js/ngx-formly
