@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
-// @import 'argon';
+@import 'argon';
 
 /* The '~' brings you to your "node_modules", so if you installed the correct bootstrap with npm ("bootstrap" and/or "ngx-formly/bootstrap"), this will work */
-@import '~bootstrap/scss/bootstrap.scss';
+// @import '~bootstrap/scss/bootstrap.scss';
 
 /* body padding must be at least 15px to prevent rogue horizontal scroll on page, probably a formly glitch */
 body { padding: 30px; }
