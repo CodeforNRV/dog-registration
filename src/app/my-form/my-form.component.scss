@@ -1,7 +1,8 @@
-.submit-button {
-  float: right;
-}
-
-.reset-button {
-  float: right;
+.button-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-start;
+	align-content: flex-start;
+	// background-color: green !important;
 }
