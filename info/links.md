@@ -15,6 +15,12 @@ NOT UP TO DATE:
 https://github.com/formly-js/angular-formly-templates-bootstrap
 https://alligator.io/angular/formly/
 
+dog tag landing page:
+https://www.montgomerycountyva.gov/content/15987/16015/16816/default.aspx
+
+dog tag order form:
+https://www.montgomerycountyva.gov/filestorage/16277/16895/17504/dog-tag-order-form-2018.pdf
+
 the next step is to add our images of dogs.  Then we can throw it up on GitHub.
 
 the next step is to get bootstrap-formly properly configured.  Currently we have bootstrap, but we haven't hooked the css up to formly fully, so certain things like drop-downs are not normalized.

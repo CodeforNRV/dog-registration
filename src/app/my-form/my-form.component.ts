@@ -6,6 +6,7 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 @Component({
   selector: 'custom-sel',
   templateUrl: './my-form.component.html',
+  styleUrls: ['./my-form.component.scss'],
 })
 export class MyFormComponent {
   form = new FormGroup({});
@@ -19,7 +20,7 @@ export class MyFormComponent {
     // see https://formly-js.github.io/ngx-formly/examples/form-options/reset-model for field examples
     {
       className: 'section-label',
-      template: '<hr /><h2>Owner\'s name</h2>',
+      template: '<hr /><h2>Owner</h2>',
     },
     {
       fieldGroupClassName: 'row',
@@ -30,7 +31,7 @@ export class MyFormComponent {
           key: 'name.first',
           type: 'input',
           templateOptions: {
-            label: 'First',
+            label: 'First name',
             placeholder: 'John',
             required: true,
           },
@@ -40,7 +41,7 @@ export class MyFormComponent {
           key: 'name.middle',
           type: 'input',
           templateOptions: {
-            label: 'Middle',
+            label: 'Middle name',
             placeholder: 'Edward',
           },
         },
@@ -49,12 +50,27 @@ export class MyFormComponent {
           key: 'name.last',
           type: 'input',
           templateOptions: {
-            label: 'Last',
+            label: 'Last name',
             placeholder: 'Hutchinson',
             required: true,
           },
         },
       ],
+    },
+    {
+      key: 'phone',
+      type: 'input',
+      templateOptions: {
+        label: 'Phone number',
+        placeholder: '(555)-555-5555',
+        pattern: /^\s*(?:\d{3}|\(\d{3}\))[- ]?\d{3}[- ]?\d{4}\s*$/, // remember to trim in code!
+        required: true,
+      },
+      validation: {
+        messages: {
+          pattern: (error, field: FormlyFieldConfig) => `You must input a 10-digit phone number in a common format, such as ###-###-####.`,
+        },
+      },
     },
     {
       className: 'section-label',
@@ -111,13 +127,74 @@ export class MyFormComponent {
         },
       ],
     },
-    // {
-    //   key: 'custom',
-    //   type: 'custom',
-    //   templateOptions: {
-    //     label: 'Custom inlined',
-    //   },
-    // },
+    {
+      className: 'section-label',
+      template: '<hr /><h2>Number of dogs</h2>',
+    },
+    {
+      fieldGroupClassName: 'row',
+      fieldGroup: [
+        {
+          className: 'col-4',
+          key: 'unsexed',
+          type: 'input',
+          templateOptions: {
+            type: 'number',
+            label: 'Unsexed',
+            placeholder: '0',
+            description: 'Spayed females and neutered males',
+            min: 0,
+          },
+        },
+        {
+          className: 'col-4',
+          key: 'female',
+          type: 'input',
+          templateOptions: {
+            type: 'number',
+            label: 'Female',
+            placeholder: '0',
+            description: 'Females NOT spayed',
+          },
+        },
+        {
+          className: 'col-4',
+          key: 'male',
+          type: 'input',
+          templateOptions: {
+            type: 'number',
+            label: 'Male',
+            placeholder: '0',
+            description: 'Males NOT neutered',
+          },
+        },
+      ],
+    },
+    {
+      key: 'kennel',
+      type: 'input',
+      templateOptions: {
+        type: 'number',
+        label: '20-dog kennel',
+        placeholder: '0',
+        description: 'If you are applying for a dog kennel license, you must purchase 1 license per 20 dogs.  For example, if your kennel capacity is 60, put a 3 in this box.',
+      },
+    },
+    {
+      key: 'fee',
+      type: 'input',
+      templateOptions: {
+        label: 'Fee',
+        addonLeft: {
+          text: '$',
+        },
+        placeholder: '0',
+        description: 'The total remitted fee of the dog licenses you are requesting appears here.',
+      },
+      expressionProperties: {
+        'templateOptions.disabled': 'true',
+      },
+    },
   ];
 
   submit() {
