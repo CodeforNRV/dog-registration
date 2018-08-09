@@ -5,5 +5,12 @@
 /* The '~' brings you to your "node_modules", so if you installed the correct bootstrap with npm ("bootstrap" and/or "ngx-formly/bootstrap"), this will work */
 @import '~bootstrap/scss/bootstrap.scss';
 
-/* body padding must be at least 15px to prevent rogue horizontal scroll on page, probably a formly glitch */
-body { padding: 30px; }
+body {
+  /* body padding must be at least 15px to prevent rogue horizontal scroll on page, probably a formly glitch */
+  padding: 30px;
+  // background-color: #E0DEDA;
+  background-color: pink;
+  background-image: url(assets/paper.JPG);
+  background-size: contain;
+  // background-size: 64% auto; // not bad but would need to flip image vertically and horizontally and stack them next to each other
+}

@@ -6,6 +6,7 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 @Component({
   selector: 'custom-sel',
   templateUrl: './my-form.component.html',
+  styleUrls: ['./my-form.component.scss'],
 })
 export class MyFormComponent {
   form = new FormGroup({});
