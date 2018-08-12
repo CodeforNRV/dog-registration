@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'argon';
+
+/* The '~' brings you to your "node_modules", so if you installed the correct bootstrap with npm ("bootstrap" and/or "ngx-formly/bootstrap"), this will work */
+// @import '~bootstrap/scss/bootstrap.scss';
+
+body {
+  background-color: #F7F7F3;
+  background-image: url(assets/paper.JPG);
+  background-size: contain;
+  // background-size: 64% auto; // not bad but would need to flip image vertically and horizontally and stack them next to each other
+}
