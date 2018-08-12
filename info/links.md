@@ -47,40 +47,13 @@ https://www.montgomerycountyva.gov/content/15987/16015/16816/default.aspx
 dog tag order form:
 https://www.montgomerycountyva.gov/filestorage/16277/16895/17504/dog-tag-order-form-2018.pdf
 
-the next step is to add our images of dogs.  Then we can throw it up on GitHub.
+Formly links to all the formly form builders
+https://github.com/formly-js
+
+file upload -- plugin
 
 the next step is to get bootstrap-formly properly configured.  Currently we have bootstrap, but we haven't hooked the css up to formly fully, so certain things like drop-downs are not normalized.
 
 gameplan:
-argon works, although it's annoying that the scss files have to sit in the src directory.  Perhaps that can be fixed.
+clone the repo onto my server and figure out how to put angular in production mode so that we can serve a demo.
 
-
-
-
-
-
-Optional:
-file upload
-disable or hide fields
-
-Formly links to all the formly form builders
-https://github.com/formly-js
-
-angular-Formly is for angular.  It has a bunch of examples on the left column:
-http://angular-formly.com/#!/
-features:
-input -- yes
-paragraph input -- yes
-drop down -- yes
-drop down with search
-radio button (use drop down)
-validate inputs with useful error messages next to the inputted thing -- yes
-checkbox -- yes
-file upload -- plugin
-disable or hide fields -- yes
-
-Vue-formly is basically the same thing but for Vue.js
-https://github.com/formly-js/vue-formly
-
-jQuery formbuilder: seems quite nice
-https://formbuilder.online

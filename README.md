@@ -1,18 +1,35 @@
-Angular seems quite nice.  Let's build it as an angular app, so it can work also nicely on phones/small screens.
+# dog-registration
+Montgomery County requires that all dogs in the county be registered and this will help make that easier!
 
-let's use formly for angular 2+:
-https://github.com/formly-js/ngx-formly
+## Demo
 
+Visit [learnnation.org/dogtags.html](http://learnnation.org/dogtags/index.html).
 
-bootstrap themes w forms:
-https://demos.creative-tim.com/argon-design-system/index
-https://github.com/formly-js/angular-formly-templates-bootstrap
-https://alligator.io/angular/formly/
+## Development server
 
-the next step is to add our images of dogs.  Then we can throw it up on GitHub.
+  1. `git clone ...` the repo.
+  2. `cd ...` into the repo.
+  3. `npm install` to install all node dependencies.
+  4. `npm install -g @angular/cli` to install the angular CLI. The `-g` option causes it to be installed globally, and this is recommended.
+  5. `ng serve` for a dev server. Navigate to [localhost:4200](http://localhost:4200/). The app will automatically reload if you change any of the source files.
 
-the next step is to get bootstrap-formly properly configured.  Currently we have bootstrap, but we haven't hooked the css up to formly fully, so certain things like drop-downs are not normalized.
+Most of your work will be done in files in the folder `src/app`.  The root html file is at `src/index.html`, the root javascript (actually typescript) file is at `src/main.ts`, and the root CSS (actually SCSS) file is at `src/styles.scss`.
 
-gameplan:
-FIRST try argon.
-THEN try angular-formly-templates-bootstrap
+## Production server
+
+  1. `git clone ...` the repo.
+  2. `cd ...` into the repo.
+  3. `npm install` to install all node dependencies.
+  4. `npm install -g @angular/cli` to install the angular CLI. The -g option causes it to be installed globally, and this is recommended.
+  5. `ng build --prod`, or `ng build --prod --base-href baseplace` if the user is going to visit [domain.com/baseplace/index.html](http://domain.com/baseplace/index.html).  The build artifacts will be stored in the `dist` directory.
+  6. Set up a static file server pointing to the directory `/path/to/dog-registration/dist/dogtags`.
+
+See [stackoverflow](https://stackoverflow.com/questions/35721206/how-to-enable-production-mode-in-angular-2) if you get stuck.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Further help
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.  To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
