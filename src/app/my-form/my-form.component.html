@@ -1,8 +1,9 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
-  <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form" bgcolor="yellow">
+  <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form">
   	<div class="button-wrapper">
 	    <button type="submit" class="btn btn-primary submit-button">Checkout</button>
 	    <button type="button" class="btn btn-default reset-button" (click)="options.resetModel()">Reset</button>
 	</div>
   </formly-form>
 </form>
+<app-paypal [form]="form"></app-paypal>

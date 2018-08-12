@@ -4,28 +4,19 @@ import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { takeUntil, startWith, tap } from 'rxjs/operators';
 
-import { FormService } from '../form.service';
-
 @Component({
-  selector: 'custom-sel',
+  selector: 'app-my-form',
   templateUrl: './my-form.component.html',
   styleUrls: ['./my-form.component.scss'],
 })
 export class MyFormComponent {
 
-  constructor(private formService: FormService) { }
+  constructor() { }
 
   submit() {
     if (this.form.valid) {
       alert(JSON.stringify(this.model));
     }
-  }
-
-  updateFormService() {
-    // update the form service with the form info
-    console.log(this.model)
-    this.formService.updateInfo(this.model)
-    console.log('sent from form component')
   }
 
   form = new FormGroup({});
