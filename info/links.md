@@ -23,6 +23,9 @@ https://developer.paypal.com/developer/accounts
 create REST app for a sandbox account and get api key:
 https://developer.paypal.com/developer/applications/
 
+how to get the price to update:
+https://github.com/formly-js/ngx-formly/issues/1116
+
 let's use formly for angular 2+:
 https://github.com/formly-js/ngx-formly
 

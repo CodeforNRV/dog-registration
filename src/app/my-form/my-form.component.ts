@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
+import { takeUntil, startWith, tap } from 'rxjs/operators';
+
+import { FormService } from '../form.service';
 
 @Component({
   selector: 'custom-sel',
@@ -9,13 +12,32 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
   styleUrls: ['./my-form.component.scss'],
 })
 export class MyFormComponent {
+
+  constructor(private formService: FormService) { }
+
+  submit() {
+    if (this.form.valid) {
+      alert(JSON.stringify(this.model));
+    }
+  }
+
+  updateFormService() {
+    // update the form service with the form info
+    console.log(this.model)
+    this.formService.updateInfo(this.model)
+    console.log('sent from form component')
+  }
+
   form = new FormGroup({});
+
   model: any = {};
+
   options: FormlyFormOptions = {
     formState: {
       awesomeIsForced: false,
     },
   };
+
   fields: FormlyFieldConfig[] = [
     // see https://formly-js.github.io/ngx-formly/examples/form-options/reset-model for field examples
     {
@@ -68,7 +90,7 @@ export class MyFormComponent {
       },
       validation: {
         messages: {
-          pattern: (error, field: FormlyFieldConfig) => `You must input a 10-digit phone number in a common format, such as ###-###-####.`,
+          pattern: 'You must input a 10-digit phone number in a common format, such as ###-###-####.',
         },
       },
     },
@@ -139,34 +161,45 @@ export class MyFormComponent {
           className: 'col-4',
           key: 'unsexed',
           type: 'input',
+          defaultValue: 0,
           templateOptions: {
-            type: 'number',
             label: 'Unsexed',
-            placeholder: '0',
+            pattern: /^\s*\d+\s*$/, // remember to trim in code!
             description: 'Spayed females and neutered males',
             min: 0,
+            change: this.updateFee.bind(this),
+          },
+          validation: {
+            messages: {
+              pattern: 'Must be a natural number',
+            },
+          },
+          modelOptions: {
+            updateOn: 'blur',
           },
         },
         {
           className: 'col-4',
           key: 'female',
           type: 'input',
+          defaultValue: 0,
           templateOptions: {
             type: 'number',
             label: 'Female',
-            placeholder: '0',
             description: 'Females NOT spayed',
+            min: 0,
           },
         },
         {
           className: 'col-4',
           key: 'male',
           type: 'input',
+          defaultValue: 0,
           templateOptions: {
             type: 'number',
             label: 'Male',
-            placeholder: '0',
             description: 'Males NOT neutered',
+            min: 0,
           },
         },
       ],
@@ -174,22 +207,24 @@ export class MyFormComponent {
     {
       key: 'kennel',
       type: 'input',
+      defaultValue: 0,
       templateOptions: {
         type: 'number',
         label: '20-dog kennel',
         placeholder: '0',
         description: 'If you are applying for a dog kennel license, you must purchase 1 license per 20 dogs.  For example, if your kennel capacity is 60, put a 3 in this box.',
+        min: 0,
       },
     },
     {
       key: 'fee',
       type: 'input',
+      defaultValue: 0,
       templateOptions: {
         label: 'Fee',
         addonLeft: {
           text: '$',
         },
-        placeholder: '0',
         description: 'The total remitted fee of the dog licenses you are requesting appears here.',
       },
       expressionProperties: {
@@ -198,9 +233,12 @@ export class MyFormComponent {
     },
   ];
 
-  submit() {
-    if (this.form.valid) {
-      alert(JSON.stringify(this.model));
-    }
+  updateFee(): void {
+    let total = parseInt(this.form.get('unsexed').value) * 5 +
+                parseInt(this.form.get('female').value) * 10 +
+                parseInt(this.form.get('male').value) * 10 +
+                parseInt(this.form.get('kennel').value) * 50;
+    this.form.get('fee').setValue(total);
   }
+
 }

@@ -20,7 +20,6 @@ import { PaypalComponent } from './paypal/paypal.component';
     FormlyModule.forRoot({
       validationMessages: [
         { name: 'required', message: 'This field is required', },
-        { name: 'minLength', message: 'ho ho ho', },
       ],
       types: [
         { name: 'custom', component: FormlyFieldCustomInput, wrappers: ['form-field'], },

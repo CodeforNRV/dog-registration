@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { PayPalConfig, PayPalEnvironment, PayPalIntegrationType } from 'ngx-paypal';
 
+import { FormService } from '../form.service';
+
 @Component({
   selector: 'app-paypal',
   templateUrl: './paypal.component.html',
@@ -9,13 +11,27 @@ import { PayPalConfig, PayPalEnvironment, PayPalIntegrationType } from 'ngx-payp
 })
 export class PaypalComponent implements OnInit {
 
-  constructor() { }
+	constructor(private formService: FormService) { }
 
 	public payPalConfig?: PayPalConfig;
 
 	ngOnInit(): void {
 	  this.initConfig();
 	}
+
+	updateAmount(): void {
+		console.log(this.formService)
+		console.log(this.formService.info)
+		let fee = this.formService.info.fee
+		console.log(`got fee ${fee}.`)
+		this.payPalConfig.transactions = [{
+      amount: {
+        currency: 'USD',
+        total: fee,
+      },
+    }]
+    console.log('updated paypal transaction amount')
+  }
 
 	private initConfig(): void {
 	  this.payPalConfig = new PayPalConfig(PayPalIntegrationType.ClientSideREST, PayPalEnvironment.Sandbox,
@@ -38,12 +54,7 @@ export class PaypalComponent implements OnInit {
 		    onError: (err) => {
 		      console.log('OnError');
 		    },
-		    transactions: [{
-		      amount: {
-		        currency: 'USD',
-		        total: 9,
-		      },
-		    }],
+		    transactions: [], // we will add in the transaction later
 			}
 		);
 	}
