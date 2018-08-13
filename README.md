@@ -13,7 +13,7 @@ Visit [learnnation.org/dogtags.html](http://learnnation.org/dogtags/index.html).
   4. `npm install -g @angular/cli` to install the angular CLI. The `-g` option causes it to be installed globally, and this is recommended.
   5. `ng serve` for a dev server. Navigate to [localhost:4200](http://localhost:4200/). The app will automatically reload if you change any of the source files.
 
-Most of your work will be done in files in the folder `src/app`.  The root html file is at `src/index.html`, the root javascript (actually typescript) file is at `src/main.ts`, and the root CSS (actually SCSS) file is at `src/styles.scss`.
+A lot of the files in this project were automatically generated.  The handwritten stuff is mostly inside `src/app`.  However, the root html file is at `src/index.html`, the root javascript (actually typescript) file is at `src/main.ts`, and the root CSS (actually SCSS) file is at `src/styles.scss`.
 
 ## Production server
 
